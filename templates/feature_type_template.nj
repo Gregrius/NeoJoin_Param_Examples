@@ -1,0 +1,34 @@
+export entries_with_feature_type to "http://example.org/<METAMODEL_NAME>_with_group_type"
+
+import "http://vitruv.tools/methodologisttemplate/uvl" as uvl
+import <METAMODEL_URI> as metaModel
+import "http://vitruv.tools/metamodels/change/correspondence/1.0" as cors
+
+param activeFeatures : EList<uvl.Feature>
+
+from metaModel.<MODEL_CLASS> mc
+join cors.Correspondence cor
+    on cor.leftEObjects.contains(mc) || cor.rightEObjects.contains(mc)
+join uvl.Feature f
+    on cor.rightEObjects.contains(f) || cor.rightEObjects.contains(f)
+left join uvl.Optional opt
+    on opt.feature.contains(f)
+left join uvl.Mandatory mand
+    on mand.feature.contains(f)
+left join uvl.Or orGrp
+    on orGrp.feature.contains(f)
+left join uvl.Alternative alt
+    on alt.feature.contains(f)
+where ((cor.leftEObjects.contains(b) && cor.rightEObjects.contains(f))
+       || (cor.rightEObjects.contains(b) && cor.leftEObjects.contains(f)))
+   && activeFeatures.feature.exists(af | af.name == f.name)
+create metaModelEntryWithGroupType {
+    modelClassName   = mc.name
+    //Other properties of the model class an be added through
+    //modelsClass<PROPERTY_NAME> = mc.<PROPERTY_NAME>
+    groupType   := if      (opt  !== null) "Optional"
+                   else if (mand !== null) "Mandatory"
+                   else if (orGrp !== null) "Or"
+                   else if (alt  !== null) "Alternative"
+                   else                    "Cardinality"
+}
