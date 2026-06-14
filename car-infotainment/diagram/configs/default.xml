@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature name="AutomotiveInfotainment"/>
+	<feature name="BaseSystem"/>
+	<feature name="RadioTuner"/>
+	<feature name="NavigationSystem"/>
+	<feature name="NavigationModule"/>
+	<feature name="BasicNavigation"/>
+	<feature name="OfflineMapStorage"/>
+	<feature name="SmartphoneIntegration"/>
+	<feature name="AppleCarPlay"/>
+	<feature name="AndroidAuto"/>
+	<feature name="DriverAssistanceDisplay"/>
+	<feature name="SpeedLimitDisplay"/>
+	<feature name="LaneGuidance"/>
+	<feature name="ParkingAssistView"/>
+</configuration>

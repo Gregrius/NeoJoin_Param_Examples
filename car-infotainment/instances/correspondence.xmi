@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Correspondence model: links SysML Blocks (leftEObjects) to UVL Features (rightEObjects). -->
+<correspondence:Correspondences xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:correspondence="http://vitruv.tools/metamodels/change/correspondence/1.0">
+
+  <!-- BaseSystem -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-iservice"
+      rightEObjects="feature_model.xmi#f-basesystem"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-coreplatform"
+      rightEObjects="feature_model.xmi#f-basesystem"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-serviceregistry"
+      rightEObjects="feature_model.xmi#f-basesystem"/>
+
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-radioservice"
+      rightEObjects="feature_model.xmi#f-radiotuner"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-radiostation"
+      rightEObjects="feature_model.xmi#f-radiotuner"/>
+
+  <!-- NavigationSystem -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-inavigationservice"
+      rightEObjects="feature_model.xmi#f-navigationsystem"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-navigationservice"
+      rightEObjects="feature_model.xmi#f-navigationsystem"/>
+
+  <!-- BasicNavigation -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-basicmaprenderer"
+      rightEObjects="feature_model.xmi#f-basicnavigation"/>
+
+  <!-- PremiumNavigation -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-premiummaprenderer"
+      rightEObjects="feature_model.xmi#f-premiumnavigation"/>
+
+  <!-- OfflineMapStorage -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-mapstoragemanager"
+      rightEObjects="feature_model.xmi#f-offlinemapstorage"/>
+
+  <!-- SmartphoneIntegration -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-iphoneadapter"
+      rightEObjects="feature_model.xmi#f-smartphoneintegration"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-smartphoneintegrationservice"
+      rightEObjects="feature_model.xmi#f-smartphoneintegration"/>
+
+  <!-- AppleCarPlay -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-carplayadapter"
+      rightEObjects="feature_model.xmi#f-applecarplay"/>
+
+  <!-- AndroidAuto -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-androidautoadapter"
+      rightEObjects="feature_model.xmi#f-androidauto"/>
+
+  <!-- DriverAssistanceDisplay -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-iadassensor"
+      rightEObjects="feature_model.xmi#f-driverassistancedisplay"/>
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-adasservice"
+      rightEObjects="feature_model.xmi#f-driverassistancedisplay"/>
+
+  <!-- SpeedLimitDisplay -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-speedlimitmonitor"
+      rightEObjects="feature_model.xmi#f-speedlimitdisplay"/>
+
+  <!-- LaneGuidance -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-laneguidancemonitor"
+      rightEObjects="feature_model.xmi#f-laneguidance"/>
+
+  <!-- ParkingAssistView -->
+  <correspondences xsi:type="correspondence:ManualCorrespondence"
+      leftEObjects="sysml_design_150.xmi#b-parkingassistmonitor"
+      rightEObjects="feature_model.xmi#f-parkingassistview"/>
+
+</correspondence:Correspondences>

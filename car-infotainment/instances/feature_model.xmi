@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Feature model using the UVL metamodel.
+     xmi:id attributes added to each Feature element so that
+     correspondence.xmi can reference them via stable cross-document links. -->
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:uvl="http://vitruv.tools/methodologisttemplate/uvl">
+
+  <uvl:UVLModel>
+    <tree>
+      <root xsi:type="uvl:Mandatory">
+
+        <feature name="AutomotiveInfotainment">
+
+          <children xsi:type="uvl:Mandatory">
+            <feature xmi:id="f-basesystem"  name="BaseSystem" />
+            <feature xmi:id="f-radiotuner"  name="RadioTuner" />
+          </children>
+
+          <children xsi:type="uvl:Optional">
+
+            <feature xmi:id="f-navigationsystem" name="NavigationSystem">
+              <children xsi:type="uvl:Alternative">
+                <feature xmi:id="f-basicnavigation"   name="BasicNavigation"   />
+                <feature xmi:id="f-premiumnavigation" name="PremiumNavigation" />
+              </children>
+              <children xsi:type="uvl:Optional">
+                <feature xmi:id="f-offlinemapstorage" name="OfflineMapStorage" />
+              </children>
+            </feature>
+
+            <feature xmi:id="f-smartphoneintegration" name="SmartphoneIntegration">
+              <children xsi:type="uvl:Or">
+                <feature xmi:id="f-applecarplay" name="AppleCarPlay" />
+                <feature xmi:id="f-androidauto"  name="AndroidAuto"  />
+              </children>
+            </feature>
+
+            <feature xmi:id="f-driverassistancedisplay" name="DriverAssistanceDisplay">
+              <children xsi:type="uvl:Optional">
+                <feature xmi:id="f-speedlimitdisplay" name="SpeedLimitDisplay" />
+                <feature xmi:id="f-laneguidance"      name="LaneGuidance"      />
+                <feature xmi:id="f-parkingassistview" name="ParkingAssistView" />
+              </children>
+            </feature>
+
+          </children>
+        </feature>
+
+      </root>
+    </tree>
+  </uvl:UVLModel>
+
+</xmi:XMI>

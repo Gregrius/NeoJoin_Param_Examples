@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Comfort Model configuration using configurationsMM.ecore.
+     All 13 features listed; isSelected=true marks those active in the Comfort Model.
+     Used as: param activeConfig : config.Configuration -->
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:config="http://vitruv.tools/methodologisttemplate/config">
+
+  <config:Configuration PLVersion="2">
+    <!-- Mandatory — always selected -->
+    <feature name="BaseSystem"              isSelected="true"/>
+    <feature name="RadioTuner"              isSelected="true"/>
+    <!-- Navigation — BasicNavigation + OfflineMapStorage selected; Premium not -->
+    <feature name="NavigationSystem"        isSelected="true"/>
+    <feature name="BasicNavigation"         isSelected="true"/>
+    <feature name="PremiumNavigation"       isSelected="false"/>
+    <feature name="OfflineMapStorage"       isSelected="true"/>
+    <!-- Smartphone integration — selected -->
+    <feature name="SmartphoneIntegration"   isSelected="true"/>
+    <feature name="AppleCarPlay"            isSelected="true"/>
+    <feature name="AndroidAuto"             isSelected="true"/>
+    <!-- ADAS — not in Comfort Model -->
+    <feature name="DriverAssistanceDisplay" isSelected="false"/>
+    <feature name="SpeedLimitDisplay"       isSelected="false"/>
+    <feature name="LaneGuidance"            isSelected="false"/>
+    <feature name="ParkingAssistView"       isSelected="false"/>
+  </config:Configuration>
+
+</xmi:XMI>

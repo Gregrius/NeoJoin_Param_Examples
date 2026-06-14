@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The Base Model defined as a list of features:
+  BaseSystem + RadioTuner + SmartphoneIntegration + AppleCarPlay + AndroidAuto -->
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:uvl="http://vitruv.tools/methodologisttemplate/uvl">
+
+  <uvl:Feature name="BaseSystem"/>
+  <uvl:Feature name="RadioTuner"/>
+  <uvl:Feature name="SmartphoneIntegration"/>
+  <uvl:Feature name="AppleCarPlay"/>
+  <uvl:Feature name="AndroidAuto"/>
+
+</xmi:XMI>

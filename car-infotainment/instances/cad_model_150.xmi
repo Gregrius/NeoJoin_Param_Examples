@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 150% CAD model conforming to the cad metamodel (nsURI http://www.example.org/cad).
+     One namespace per component describing its physical/manufacturing characteristics.
+     Namespace names match the classifier names in sysml_design_150.xmi and java_source_150.xmi. -->
+<cad:CAD_Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cad="http://www.example.org/cad"
+    id="cad-infotainment-150pct"
+    name="CarInfotainment-150pct-CAD">
+
+  <!-- ===== BaseSystem feature ===== -->
+  <namespaces name="IService" description="Service interface abstraction layer">
+    <parameters xsi:type="cad:StringParameter"  name="interfaceVersion"  description="API version string"   value="2.0.0"/>
+    <parameters xsi:type="cad:BooleanParameter" name="isSynchronous"     description="Sync vs async protocol" value="true"/>
+  </namespaces>
+
+  <namespaces name="CorePlatform" description="Central software platform and service host">
+    <parameters xsi:type="cad:NumericParameter" name="cpuCores"          description="Allocated CPU cores"       value="4.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="ramMB"             description="RAM allocation (MB)"       value="512.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="boardWidth"        description="PCB width"                 value="120.0" unit="mm"/>
+    <parameters xsi:type="cad:NumericParameter" name="boardHeight"       description="PCB height"                value="80.0"  unit="mm"/>
+    <parameters xsi:type="cad:BooleanParameter" name="hasHardwareWatchdog" description="HW watchdog present"    value="true"/>
+  </namespaces>
+
+  <namespaces name="ServiceRegistry" description="Dynamic service lookup and registration">
+    <parameters xsi:type="cad:NumericParameter" name="maxServices"       description="Max registered services"  value="64.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:StringParameter"  name="ipcMechanism"      description="IPC transport"             value="D-Bus"/>
+  </namespaces>
+
+  <!-- ===== RadioTuner feature ===== -->
+  <namespaces name="RadioService" description="FM/AM/DAB radio tuner service">
+    <parameters xsi:type="cad:NumericParameter" name="fmFreqMin"         description="FM min frequency (MHz)"   value="87.5"  unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="fmFreqMax"         description="FM max frequency (MHz)"   value="108.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="antennaLength"     description="Antenna length"           value="250.0" unit="mm"/>
+    <parameters xsi:type="cad:BooleanParameter" name="isDabEnabled"      description="DAB support"              value="true"/>
+  </namespaces>
+
+  <namespaces name="RadioStation" description="Stored radio station data record">
+    <parameters xsi:type="cad:StringParameter"  name="encodingFormat"    description="Station data format"      value="RDS-v2"/>
+    <parameters xsi:type="cad:NumericParameter" name="maxStoredStations" description="Station memory slots"     value="200.0" unit="COUNT"/>
+  </namespaces>
+
+  <!-- ===== NavigationSystem feature ===== -->
+  <namespaces name="INavigationService" description="Navigation service interface">
+    <parameters xsi:type="cad:StringParameter"  name="protocolVersion"   description="Nav protocol version"     value="1.3"/>
+  </namespaces>
+
+  <namespaces name="NavigationService" description="Core navigation and routing engine">
+    <parameters xsi:type="cad:NumericParameter" name="gpsSensitivity"    description="GPS receiver sensitivity (dBm)" value="-160.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="routeCalcTimeMs"   description="Max route calc time (ms)" value="500.0" unit="COUNT"/>
+    <parameters xsi:type="cad:BooleanParameter" name="supportsOffline"   description="Offline routing capable"  value="true"/>
+  </namespaces>
+
+  <!-- ===== BasicNavigation feature ===== -->
+  <namespaces name="BasicMapRenderer" description="Standard 2D map tile renderer">
+    <parameters xsi:type="cad:NumericParameter" name="tileSize"          description="Map tile size (px)"       value="256.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="maxZoomLevel"      description="Maximum zoom level"       value="18.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="displayWidth"      description="Target display width (mm)" value="190.0" unit="mm"/>
+    <parameters xsi:type="cad:NumericParameter" name="displayHeight"     description="Target display height (mm)" value="110.0" unit="mm"/>
+  </namespaces>
+
+  <!-- ===== PremiumNavigation feature ===== -->
+  <namespaces name="PremiumMapRenderer" description="High-definition 3D map renderer">
+    <parameters xsi:type="cad:NumericParameter" name="maxZoomLevel"      description="Maximum zoom level (HD)"  value="22.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="gpuMemoryMB"       description="GPU memory budget (MB)"   value="256.0" unit="COUNT"/>
+    <parameters xsi:type="cad:BooleanParameter" name="supports3D"        description="3D building rendering"    value="true"/>
+  </namespaces>
+
+  <!-- ===== OfflineMapStorage feature ===== -->
+  <namespaces name="MapStorageManager" description="Offline map tile download and cache">
+    <parameters xsi:type="cad:NumericParameter" name="storageLimitGB"    description="Max offline storage (GB)" value="32.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:StringParameter"  name="compressionFormat" description="Tile compression scheme"  value="zstd"/>
+    <parameters xsi:type="cad:BooleanParameter" name="autoUpdate"        description="Background map updates"   value="false"/>
+  </namespaces>
+
+  <!-- ===== SmartphoneIntegration feature ===== -->
+  <namespaces name="IPhoneAdapter" description="Smartphone pairing interface contract">
+    <parameters xsi:type="cad:StringParameter"  name="usbProtocol"       description="USB protocol version"     value="USB-C 3.2"/>
+  </namespaces>
+
+  <namespaces name="SmartphoneIntegrationService" description="Bluetooth and USB smartphone hub">
+    <parameters xsi:type="cad:NumericParameter" name="btVersion"         description="Bluetooth version (x10)"  value="52.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="usbPowerW"         description="USB charging power (W)"   value="45.0"  unit="COUNT"/>
+    <parameters xsi:type="cad:BooleanParameter" name="wirelessEnabled"   description="Wireless pairing support" value="true"/>
+  </namespaces>
+
+  <!-- ===== AppleCarPlay feature ===== -->
+  <namespaces name="CarPlayAdapter" description="Apple CarPlay session handler">
+    <parameters xsi:type="cad:StringParameter"  name="carPlayVersion"    description="CarPlay protocol version" value="14.0"/>
+    <parameters xsi:type="cad:BooleanParameter" name="wirelessCarPlay"   description="Wireless mode supported"  value="true"/>
+  </namespaces>
+
+  <!-- ===== AndroidAuto feature ===== -->
+  <namespaces name="AndroidAutoAdapter" description="Android Auto session handler">
+    <parameters xsi:type="cad:StringParameter"  name="androidAutoVersion" description="Android Auto version"   value="10.0"/>
+    <parameters xsi:type="cad:BooleanParameter" name="wirelessAndroidAuto" description="Wireless mode"         value="false"/>
+  </namespaces>
+
+  <!-- ===== DriverAssistanceDisplay feature ===== -->
+  <namespaces name="IAdasSensor" description="ADAS sensor interface contract">
+    <parameters xsi:type="cad:StringParameter"  name="sensorBus"         description="Sensor bus protocol"      value="CAN-FD"/>
+  </namespaces>
+
+  <namespaces name="AdasService" description="Central ADAS fusion and alert service">
+    <parameters xsi:type="cad:NumericParameter" name="maxSensorCount"    description="Max connected sensors"    value="8.0"   unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="processingLatencyMs" description="Max fusion latency (ms)" value="20.0" unit="COUNT"/>
+    <parameters xsi:type="cad:BooleanParameter" name="hasFunctionalSafety" description="ISO 26262 ASIL-B"       value="true"/>
+  </namespaces>
+
+  <!-- ===== SpeedLimitDisplay feature ===== -->
+  <namespaces name="SpeedLimitMonitor" description="Traffic sign recognition and speed limit display">
+    <parameters xsi:type="cad:NumericParameter" name="cameraResolutionMP" description="Camera resolution (MP)" value="2.0"   unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="updateIntervalMs"   description="Update rate (ms)"       value="100.0" unit="COUNT"/>
+    <parameters xsi:type="cad:BooleanParameter" name="gpsAided"           description="GPS-aided recognition"  value="true"/>
+  </namespaces>
+
+  <!-- ===== LaneGuidance feature ===== -->
+  <namespaces name="LaneGuidanceMonitor" description="Lane departure warning and guidance">
+    <parameters xsi:type="cad:NumericParameter" name="cameraFovDeg"       description="Camera field of view (°)" value="120.0" unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="laneWidthMinMM"     description="Min detectable lane width (mm)" value="2500.0" unit="mm"/>
+    <parameters xsi:type="cad:BooleanParameter" name="nightVisionEnabled"  description="IR night vision support" value="false"/>
+  </namespaces>
+
+  <!-- ===== ParkingAssistView feature ===== -->
+  <namespaces name="ParkingAssistMonitor" description="Ultrasonic parking distance sensor array">
+    <parameters xsi:type="cad:NumericParameter" name="sensorCount"        description="Number of sensors"       value="8.0"   unit="COUNT"/>
+    <parameters xsi:type="cad:NumericParameter" name="maxRangeM"          description="Detection range (m)"     value="2.5"   unit="m"/>
+    <parameters xsi:type="cad:NumericParameter" name="sensorDiameterMM"   description="Sensor diameter (mm)"    value="18.0"  unit="mm"/>
+    <parameters xsi:type="cad:BooleanParameter" name="hasAudioAlert"      description="Audible proximity alert"  value="true"/>
+  </namespaces>
+
+</cad:CAD_Model>

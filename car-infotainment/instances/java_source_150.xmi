@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 150% Java source model conforming to Eclipse MoDisco Java 0.2 -->
+<java:Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
+    name="CarInfotainment-150pct-Java">
+
+  <!-- ===== com.example.ivi.core: BaseSystem feature ===== -->
+  <ownedElements name="com.example.ivi.core">
+
+    <ownedElements xsi:type="java:InterfaceDeclaration" name="IService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="initialize">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="shutdown">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="getStatus">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="CorePlatform">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="start">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="stop">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="loadService">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="ServiceRegistry">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="register">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="lookup">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+  </ownedElements>
+
+  <ownedElements name="com.example.ivi.radio">
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="RadioService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="tune">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="setVolume">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="scan">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== com.example.ivi.navigation ===== -->
+  <ownedElements name="com.example.ivi.navigation">
+
+    <ownedElements xsi:type="java:InterfaceDeclaration" name="INavigationService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="calculateRoute">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="getETA">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="NavigationService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="calculateRoute">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="recalculate">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="BasicMapRenderer">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="render">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="setZoom">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="PremiumMapRenderer">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="render">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="renderTraffic">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="MapStorageManager">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="downloadMap">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="clearCache">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== com.example.ivi.smartphone ===== -->
+  <ownedElements name="com.example.ivi.smartphone">
+
+    <ownedElements xsi:type="java:InterfaceDeclaration" name="IPhoneAdapter">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="connect">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="disconnect">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="isConnected">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="SmartphoneIntegrationService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="pair">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="unpair">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="CarPlayAdapter">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="startSession">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="endSession">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="AndroidAutoAdapter">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="startSession">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="endSession">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== com.example.ivi.adas ===== -->
+  <ownedElements name="com.example.ivi.adas">
+
+    <ownedElements xsi:type="java:InterfaceDeclaration" name="IAdasSensor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="getSensorData">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="calibrate">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="AdasService">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="processFrame">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="setAlertThreshold">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="SpeedLimitMonitor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="detectSpeedLimit">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="notifyExceeded">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="LaneGuidanceMonitor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="detectLanes">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="notifyDeparture">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+    <ownedElements xsi:type="java:ClassDeclaration" name="ParkingAssistMonitor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="scan">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" name="activateGuide">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+    </ownedElements>
+
+  </ownedElements>
+
+</java:Model>

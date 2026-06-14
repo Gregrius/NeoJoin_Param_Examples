@@ -1,0 +1,26 @@
+export full_traceability to "http://example.org/full_traceability"
+
+import "http://vitruv.tools/methodologisttemplate/uvl" as uvl
+import "http://vitruv.tools/methodologisttemplate/sysml"
+import "http://www.example.org/cad"
+import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" as javaMM
+import "http://vitruv.tools/metamodels/change/correspondence/1.0" as cors
+
+param activeFeatures : EList<uvl.Feature>
+
+from sysml.Block b
+join cors.Correspondence cor
+    on cor.leftEObjects.contains(b)
+join uvl.Feature f
+    on cor.rightEObjects.contains(f)
+join cad.Namespace ns
+    on ns.name == b.name
+join javaMM.AbstractTypeDeclaration t
+    on t.name == b.name
+where activeFeatures.exists(af | af.name == f.name)
+create FullStackTrace {
+    featureName = f.name
+    sysmlName   = b.name
+    cadName     = ns.name
+    javaName    = t.name
+}

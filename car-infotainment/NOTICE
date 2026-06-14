@@ -1,0 +1,20 @@
+## Declared Project Licenses
+
+These materials are made available under the terms
+of the "Creative Commons Attribution 4.0 International" which is available under LICENSE in the root of the repository.
+
+## Third-party Content
+
+This project leverages the following third party content.
+
+* java.ecore - Java Metamodel from the Eclipse Modisco project (https://github.com/eclipse-modisco/org.eclipse.modisco)
+
+  * License: EPL-2.0
+
+* correspondence.ecore - Correspondence Metamodel from Vitruv Change (https://github.com/vitruv-tools/Vitruv-Change/), modified to work with NeoJoin
+
+  * License: EPL-1.0
+
+* cad.ecore - CAD Metamodel from Vitruvius Brake Case Study (https://github.com/vitruv-case-studies/BrakeCaseStudy/)
+
+  * License: CC-BY-4.0

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 150% SysML design model conforming to the sysml metamodel.
+     Variability is maintained separately in correspondence.xmi.
+     xmi:id attributes added to each Block/InterfaceBlock so that
+     correspondence.xmi can reference them via stable cross-document links. -->
+<sysml:Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:sysml="http://vitruv.tools/methodologisttemplate/sysml"
+    name="CarInfotainment-150pct-SysML">
+
+  <!-- ===== core package: BaseSystem feature ===== -->
+  <ownedElements xsi:type="sysml:Package" name="core">
+
+    <ownedElements xsi:type="sysml:InterfaceBlock" xmi:id="b-iservice" name="IService" visibility="public">
+      <operations name="initialize" visibility="public"/>
+      <operations name="shutdown"   visibility="public"/>
+      <operations name="getStatus"  visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-coreplatform" name="CorePlatform" visibility="public" isEncapsulated="true">
+      <values name="version"  visibility="private"/>
+      <values name="running"  visibility="private"/>
+      <operations name="start"       visibility="public"/>
+      <operations name="stop"        visibility="public"/>
+      <operations name="loadService" visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-serviceregistry" name="ServiceRegistry" visibility="public">
+      <operations name="register" visibility="public"/>
+      <operations name="lookup"   visibility="public"/>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== radio package: RadioTuner feature ===== -->
+  <ownedElements xsi:type="sysml:Package" name="radio">
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-radioservice" name="RadioService" visibility="public" isEncapsulated="true">
+      <values name="currentFrequency" visibility="private"/>
+      <values name="volume"           visibility="private"/>
+      <operations name="tune"      visibility="public"/>
+      <operations name="setVolume" visibility="public"/>
+      <operations name="scan"      visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-radiostation" name="RadioStation" visibility="public">
+      <values name="stationName" visibility="public"/>
+      <values name="frequency"   visibility="public"/>
+      <values name="genre"       visibility="public"/>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== navigation package ===== -->
+  <ownedElements xsi:type="sysml:Package" name="navigation">
+
+    <ownedElements xsi:type="sysml:InterfaceBlock" xmi:id="b-inavigationservice" name="INavigationService" visibility="public">
+      <operations name="calculateRoute" visibility="public"/>
+      <operations name="getETA"         visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-navigationservice" name="NavigationService" visibility="public" isEncapsulated="true">
+      <values name="currentRoute" visibility="private"/>
+      <values name="isOnline"     visibility="private"/>
+      <operations name="calculateRoute" visibility="public"/>
+      <operations name="recalculate"    visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-basicmaprenderer" name="BasicMapRenderer" visibility="public">
+      <values name="zoomLevel" visibility="private"/>
+      <operations name="render"  visibility="public"/>
+      <operations name="setZoom" visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-premiummaprenderer" name="PremiumMapRenderer" visibility="public">
+      <values name="tileResolution" visibility="private"/>
+      <operations name="renderHD"        visibility="public"/>
+      <operations name="loadTileCache"   visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-mapstoragemanager" name="MapStorageManager" visibility="public">
+      <values name="storagePath"  visibility="private"/>
+      <values name="cacheSize"    visibility="private"/>
+      <operations name="download" visibility="public"/>
+      <operations name="purge"    visibility="public"/>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== smartphone package: SmartphoneIntegration, AppleCarPlay, AndroidAuto features ===== -->
+  <ownedElements xsi:type="sysml:Package" name="smartphone">
+
+    <ownedElements xsi:type="sysml:InterfaceBlock" xmi:id="b-iphoneadapter" name="IPhoneAdapter" visibility="public">
+      <operations name="connect"    visibility="public"/>
+      <operations name="disconnect" visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-smartphoneintegrationservice" name="SmartphoneIntegrationService" visibility="public" isEncapsulated="true">
+      <values name="pairedDevice"  visibility="private"/>
+      <operations name="pair"      visibility="public"/>
+      <operations name="unpair"    visibility="public"/>
+      <operations name="getApps"   visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-carplayadapter" name="CarPlayAdapter" visibility="public">
+      <values name="sessionId"     visibility="private"/>
+      <operations name="startSession" visibility="public"/>
+      <operations name="endSession"   visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-androidautoadapter" name="AndroidAutoAdapter" visibility="public">
+      <values name="sessionId"     visibility="private"/>
+      <operations name="startSession" visibility="public"/>
+      <operations name="endSession"   visibility="public"/>
+    </ownedElements>
+
+  </ownedElements>
+
+  <!-- ===== adas package: DriverAssistanceDisplay, SpeedLimitDisplay, LaneGuidance, ParkingAssistView ===== -->
+  <ownedElements xsi:type="sysml:Package" name="adas">
+
+    <ownedElements xsi:type="sysml:InterfaceBlock" xmi:id="b-iadassensor" name="IAdasSensor" visibility="public">
+      <operations name="getSensorData" visibility="public"/>
+      <operations name="calibrate"     visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-adasservice" name="AdasService" visibility="public" isEncapsulated="true">
+      <values name="sensorCount" visibility="private"/>
+      <operations name="processSensorData" visibility="public"/>
+      <operations name="triggerAlert"      visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-speedlimitmonitor" name="SpeedLimitMonitor" visibility="public">
+      <values name="currentLimit"  visibility="private"/>
+      <operations name="updateLimit" visibility="public"/>
+      <operations name="alert"       visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-laneguidancemonitor" name="LaneGuidanceMonitor" visibility="public">
+      <values name="laneWidth"     visibility="private"/>
+      <operations name="detectLane"  visibility="public"/>
+      <operations name="warnDrift"   visibility="public"/>
+    </ownedElements>
+
+    <ownedElements xsi:type="sysml:Block" xmi:id="b-parkingassistmonitor" name="ParkingAssistMonitor" visibility="public">
+      <values name="proximityThreshold" visibility="private"/>
+      <operations name="scan"           visibility="public"/>
+      <operations name="alertObstacle"  visibility="public"/>
+    </ownedElements>
+
+  </ownedElements>
+
+</sysml:Model>

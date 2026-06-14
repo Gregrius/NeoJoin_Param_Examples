@@ -1,0 +1,18 @@
+export feature_blocks to "http://example.org/feature_blocks"
+
+import "http://vitruv.tools/methodologisttemplate/uvl" as uvl
+import "http://vitruv.tools/methodologisttemplate/sysml"
+import "http://vitruv.tools/metamodels/change/correspondence/1.0" as cors
+
+param featureName : EString
+
+from sysml.Block b
+join cors.Correspondence cor
+    on cor.leftEObjects.contains(b)
+join uvl.Feature f
+    on cor.rightEObjects.contains(f)
+where f.name == (featureName ?: f.name)
+create FeatureBlockView {
+    sysmlName   = b.name
+    featureName = f.name
+}

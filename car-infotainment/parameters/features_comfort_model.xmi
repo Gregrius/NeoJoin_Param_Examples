@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The Comfort Model defined as a list of features:
+  Base + NavigationSystem + BasicNavigation + OfflineMapStorage -->
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:uvl="http://vitruv.tools/methodologisttemplate/uvl">
+
+  <uvl:Feature name="BaseSystem"/>
+  <uvl:Feature name="RadioTuner"/>
+  <uvl:Feature name="NavigationSystem"/>
+  <uvl:Feature name="BasicNavigation"/>
+  <uvl:Feature name="OfflineMapStorage"/>
+  <uvl:Feature name="SmartphoneIntegration"/>
+  <uvl:Feature name="AppleCarPlay"/>
+  <uvl:Feature name="AndroidAuto"/>
+
+</xmi:XMI>

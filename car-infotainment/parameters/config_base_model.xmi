@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Base Model configuration using configurations.ecore.
+     All 13 features listed; isSelected=true marks those active in the Base Model.
+     Used as: param activeConfig : config.Configuration -->
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:config="http://vitruv.tools/methodologisttemplate/config">
+
+  <config:Configuration PLVersion="1">
+    <!-- Mandatory — always selected -->
+    <feature name="BaseSystem"              isSelected="true"/>
+    <feature name="RadioTuner"              isSelected="true"/>
+    <!-- Navigation — not in Base Model -->
+    <feature name="NavigationSystem"        isSelected="false"/>
+    <feature name="BasicNavigation"         isSelected="false"/>
+    <feature name="PremiumNavigation"       isSelected="false"/>
+    <feature name="OfflineMapStorage"       isSelected="false"/>
+    <!-- Smartphone integration — selected in Base Model -->
+    <feature name="SmartphoneIntegration"   isSelected="true"/>
+    <feature name="AppleCarPlay"            isSelected="true"/>
+    <feature name="AndroidAuto"             isSelected="true"/>
+    <!-- ADAS — not in Base Model -->
+    <feature name="DriverAssistanceDisplay" isSelected="false"/>
+    <feature name="SpeedLimitDisplay"       isSelected="false"/>
+    <feature name="LaneGuidance"            isSelected="false"/>
+    <feature name="ParkingAssistView"       isSelected="false"/>
+  </config:Configuration>
+
+</xmi:XMI>
