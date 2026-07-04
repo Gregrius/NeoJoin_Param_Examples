@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<blocks_with_feature_names:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:blocks_with_feature_names="http://example.org/blocks_with_feature_names">
+  <allmetaModelEntrys modelClassName="IService" featureName="BaseSystem"/>
+  <allmetaModelEntrys modelClassName="CorePlatform" featureName="BaseSystem"/>
+  <allmetaModelEntrys modelClassName="ServiceRegistry" featureName="BaseSystem"/>
+  <allmetaModelEntrys modelClassName="RadioService" featureName="RadioTuner"/>
+  <allmetaModelEntrys modelClassName="RadioStation" featureName="RadioTuner"/>
+  <allmetaModelEntrys modelClassName="INavigationService" featureName="NavigationSystem"/>
+  <allmetaModelEntrys modelClassName="NavigationService" featureName="NavigationSystem"/>
+  <allmetaModelEntrys modelClassName="BasicMapRenderer" featureName="BasicNavigation"/>
+  <allmetaModelEntrys modelClassName="PremiumMapRenderer" featureName="PremiumNavigation"/>
+  <allmetaModelEntrys modelClassName="MapStorageManager" featureName="OfflineMapStorage"/>
+  <allmetaModelEntrys modelClassName="IPhoneAdapter" featureName="SmartphoneIntegration"/>
+  <allmetaModelEntrys modelClassName="SmartphoneIntegrationService" featureName="SmartphoneIntegration"/>
+  <allmetaModelEntrys modelClassName="CarPlayAdapter" featureName="AppleCarPlay"/>
+  <allmetaModelEntrys modelClassName="AndroidAutoAdapter" featureName="AndroidAuto"/>
+  <allmetaModelEntrys modelClassName="IAdasSensor" featureName="DriverAssistanceDisplay"/>
+  <allmetaModelEntrys modelClassName="AdasService" featureName="DriverAssistanceDisplay"/>
+  <allmetaModelEntrys modelClassName="SpeedLimitMonitor" featureName="SpeedLimitDisplay"/>
+  <allmetaModelEntrys modelClassName="LaneGuidanceMonitor" featureName="LaneGuidance"/>
+  <allmetaModelEntrys modelClassName="ParkingAssistMonitor" featureName="ParkingAssistView"/>
+</blocks_with_feature_names:Root>

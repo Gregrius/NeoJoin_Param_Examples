@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feature_blocks:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature_blocks="http://example.org/feature_blocks">
+  <allFeatureBlockViews sysmlName="PremiumMapRenderer" featureName="PremiumNavigation"/>
+</feature_blocks:Root>

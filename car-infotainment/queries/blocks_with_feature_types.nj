@@ -1,0 +1,30 @@
+export entries_with_feature_types to "http://example.org/blocks_with_group_types"
+
+import "http://vitruv.tools/methodologisttemplate/sysml" as metaModel
+import "http://vitruv.tools/methodologisttemplate/uvl" as uvl
+import "http://vitruv.tools/metamodels/change/correspondence/1.0" as cors
+
+from metaModel.Block mc
+join cors.Correspondence cor
+    on cor.leftEObjects.contains(mc) || cor.rightEObjects.contains(mc)
+join uvl.Feature f
+    on cor.leftEObjects.contains(f) || cor.rightEObjects.contains(f)
+left join uvl.Optional opt
+    on opt.feature.contains(f)
+left join uvl.Mandatory mand
+    on mand.feature.contains(f)
+left join uvl.Or orGrp
+    on orGrp.feature.contains(f)
+left join uvl.Alternative alt
+    on alt.feature.contains(f)
+where ((cor.leftEObjects.contains(mc) && cor.rightEObjects.contains(f))
+       || (cor.rightEObjects.contains(mc) && cor.leftEObjects.contains(f)))
+
+create metaModelEntryWithGroupType {
+    modelClassName   = mc.name
+    groupType   := if      (opt  !== null) "Optional"
+                   else if (mand !== null) "Mandatory"
+                   else if (orGrp !== null) "Or"
+                   else if (alt  !== null) "Alternative"
+                   else                    "Cardinality"
+}

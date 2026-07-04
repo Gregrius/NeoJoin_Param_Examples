@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<architecture_view:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:architecture_view="http://example.org/team_specific_view">
+  <allArchitectureViews sysmlName="IService" cadName="IService"/>
+  <allArchitectureViews sysmlName="CorePlatform" cadName="CorePlatform"/>
+  <allArchitectureViews sysmlName="ServiceRegistry" cadName="ServiceRegistry"/>
+  <allArchitectureViews sysmlName="RadioService" cadName="RadioService"/>
+  <allArchitectureViews sysmlName="RadioStation" cadName="RadioStation"/>
+  <allArchitectureViews sysmlName="INavigationService" cadName="INavigationService"/>
+  <allArchitectureViews sysmlName="NavigationService" cadName="NavigationService"/>
+  <allArchitectureViews sysmlName="BasicMapRenderer" cadName="BasicMapRenderer"/>
+  <allArchitectureViews sysmlName="PremiumMapRenderer" cadName="PremiumMapRenderer"/>
+  <allArchitectureViews sysmlName="MapStorageManager" cadName="MapStorageManager"/>
+  <allArchitectureViews sysmlName="IPhoneAdapter" cadName="IPhoneAdapter"/>
+  <allArchitectureViews sysmlName="SmartphoneIntegrationService" cadName="SmartphoneIntegrationService"/>
+  <allArchitectureViews sysmlName="CarPlayAdapter" cadName="CarPlayAdapter"/>
+  <allArchitectureViews sysmlName="AndroidAutoAdapter" cadName="AndroidAutoAdapter"/>
+  <allArchitectureViews sysmlName="IAdasSensor" cadName="IAdasSensor"/>
+  <allArchitectureViews sysmlName="AdasService" cadName="AdasService"/>
+  <allArchitectureViews sysmlName="SpeedLimitMonitor" cadName="SpeedLimitMonitor"/>
+  <allArchitectureViews sysmlName="LaneGuidanceMonitor" cadName="LaneGuidanceMonitor"/>
+  <allArchitectureViews sysmlName="ParkingAssistMonitor" cadName="ParkingAssistMonitor"/>
+</architecture_view:Root>

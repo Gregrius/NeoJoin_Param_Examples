@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bom:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bom="http://example.org/bom_sysml">
+  <allSysMLBOMEntrys sysmlName="IService" featureName="BaseSystem"/>
+  <allSysMLBOMEntrys sysmlName="CorePlatform" featureName="BaseSystem"/>
+  <allSysMLBOMEntrys sysmlName="ServiceRegistry" featureName="BaseSystem"/>
+  <allSysMLBOMEntrys sysmlName="RadioService" featureName="RadioTuner"/>
+  <allSysMLBOMEntrys sysmlName="RadioStation" featureName="RadioTuner"/>
+  <allSysMLBOMEntrys sysmlName="INavigationService" featureName="NavigationSystem"/>
+  <allSysMLBOMEntrys sysmlName="NavigationService" featureName="NavigationSystem"/>
+  <allSysMLBOMEntrys sysmlName="BasicMapRenderer" featureName="BasicNavigation"/>
+  <allSysMLBOMEntrys sysmlName="MapStorageManager" featureName="OfflineMapStorage"/>
+  <allSysMLBOMEntrys sysmlName="IPhoneAdapter" featureName="SmartphoneIntegration"/>
+  <allSysMLBOMEntrys sysmlName="SmartphoneIntegrationService" featureName="SmartphoneIntegration"/>
+  <allSysMLBOMEntrys sysmlName="CarPlayAdapter" featureName="AppleCarPlay"/>
+  <allSysMLBOMEntrys sysmlName="AndroidAutoAdapter" featureName="AndroidAuto"/>
+</bom:Root>

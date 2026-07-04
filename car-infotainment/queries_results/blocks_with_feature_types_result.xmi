@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<entries_with_feature_types:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:entries_with_feature_types="http://example.org/blocks_with_group_types">
+  <allmetaModelEntryWithGroupTypes modelClassName="IService" groupType="Mandatory"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="CorePlatform" groupType="Mandatory"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="ServiceRegistry" groupType="Mandatory"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="RadioService" groupType="Mandatory"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="RadioStation" groupType="Mandatory"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="INavigationService" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="NavigationService" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="BasicMapRenderer" groupType="Alternative"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="PremiumMapRenderer" groupType="Alternative"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="MapStorageManager" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="IPhoneAdapter" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="SmartphoneIntegrationService" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="CarPlayAdapter" groupType="Or"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="AndroidAutoAdapter" groupType="Or"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="IAdasSensor" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="AdasService" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="SpeedLimitMonitor" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="LaneGuidanceMonitor" groupType="Optional"/>
+  <allmetaModelEntryWithGroupTypes modelClassName="ParkingAssistMonitor" groupType="Optional"/>
+</entries_with_feature_types:Root>

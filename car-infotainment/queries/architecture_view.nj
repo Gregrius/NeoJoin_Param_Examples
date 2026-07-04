@@ -1,0 +1,15 @@
+export architecture_view to "http://example.org/team_specific_view"
+
+import "http://vitruv.tools/methodologisttemplate/sysml"
+import "http://www.example.org/cad"
+
+from sysml.Block b
+
+left join cad.Namespace ns
+    on ns.name == b.name
+
+create ArchitectureView {
+
+    sysmlName   = b.name
+    cadName     = ns?.name
+}

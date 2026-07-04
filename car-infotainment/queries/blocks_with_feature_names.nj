@@ -1,0 +1,17 @@
+export blocks_with_feature_names to "http://example.org/blocks_with_feature_names"
+
+import "http://vitruv.tools/methodologisttemplate/sysml" as metaModel
+import "http://vitruv.tools/methodologisttemplate/uvl" as uvl
+import "http://vitruv.tools/metamodels/change/correspondence/1.0" as cors
+
+from metaModel.Block mc
+join cors.Correspondence cor
+    on cor.leftEObjects.contains(mc) || cor.rightEObjects.contains(mc)
+join uvl.Feature f
+    on cor.leftEObjects.contains(f) || cor.rightEObjects.contains(f)
+where ((cor.leftEObjects.contains(mc) && cor.rightEObjects.contains(f))
+       || (cor.rightEObjects.contains(mc) && cor.leftEObjects.contains(f)))
+create metaModelEntry {
+    modelClassName = mc.name
+    featureName    = f.name    
+}
