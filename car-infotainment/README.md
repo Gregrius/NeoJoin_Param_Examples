@@ -93,3 +93,11 @@ Run
 ```neojoin car-infotainment/queries/blocks_with_feature_names.nj -m car-infotainment/metamodels -i car-infotainment/instances -t car-infotainment/queries_results/blocks_with_feature_names_result.xmi```
 
 #### Example - using the feature type template
+
+This example uses the [/templates/feature_type_template.nj](/templates/feature_type_template.nj) to combine information from the SysML model with the corresponding feature name.
+
+The concrete query (after replacing the placeholders) is `blocks_with_feature_types.nj`.
+
+Run
+
+```neojoin car-infotainment/queries/blocks_with_feature_types.nj -m car-infotainment/metamodels -i car-infotainment/instances -t car-infotainment/queries_results/blocks_with_feature_types_result.xmi```
